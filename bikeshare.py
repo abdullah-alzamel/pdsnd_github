@@ -187,6 +187,7 @@ def main():
                     break
             counter += 1
 
+    # ask the user if he/she want to restart 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
