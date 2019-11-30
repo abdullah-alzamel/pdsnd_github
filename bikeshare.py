@@ -60,16 +60,31 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+<<<<<<< HEAD
 
+||||||| merged common ancestors
+    
+=======
+    # load data file into a DataFrame
+>>>>>>> refactoring
     df = pd.read_csv(CITY_DATA[city])
+
+    # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
+
+    # extract month and day of week and hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week']=df['Start Time'].dt.weekday
     df['hour'] = df['Start Time'].dt.hour
     monls = {'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6}
+
+    # filter by month if applicable
     if month!='all':
         df = df[df['month'] == monls[month]]
+
+     # filter by day of week if applicable
     if day !=7:
+        # create new DataFrame
         df = df[df['day_of_week']== day]
     return df
 
@@ -175,8 +190,14 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+<<<<<<< HEAD
 
     # ask the user after each five lines if he/she want more
+||||||| merged common ancestors
+        
+=======
+
+>>>>>>> refactoring
         counter = 1
         for i, (index,row) in enumerate(df.iterrows()):
             print('\n', row)
@@ -186,8 +207,14 @@ def main():
                 elif (i == df.shape[0]):
                     break
             counter += 1
+<<<<<<< HEAD
 
     # ask the user if he/she want to restart 
+||||||| merged common ancestors
+        
+=======
+
+>>>>>>> refactoring
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
