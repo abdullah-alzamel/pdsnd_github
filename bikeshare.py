@@ -19,10 +19,10 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
        city = input("Which city do you want to explore Chicago, New York city or Washington? \n> ").lower()
-        
+
        if city.lower() not in ['chicago','new york city','washington']:
              print("Please choose one of the three cities")
-       else: 
+       else:
              city = city.lower()
              break
 
@@ -60,8 +60,10 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+    # load data file into a DataFrame
     df = pd.read_csv(CITY_DATA[city])
+
+    # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week']=df['Start Time'].dt.weekday
@@ -146,7 +148,7 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_types = df.groupby(['User Type']).sum()
     print('User Types\n',user_types)
-    
+
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
         gender_counts = df['Gender'].value_counts()
@@ -175,7 +177,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+
         counter = 1
         for i, (index,row) in enumerate(df.iterrows()):
             print('\n', row)
@@ -185,7 +187,7 @@ def main():
                 elif (i == df.shape[0]):
                     break
             counter += 1
-        
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
