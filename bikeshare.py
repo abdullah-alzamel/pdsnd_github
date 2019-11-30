@@ -60,13 +60,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-<<<<<<< HEAD
-
-||||||| merged common ancestors
-    
-=======
     # load data file into a DataFrame
->>>>>>> refactoring
     df = pd.read_csv(CITY_DATA[city])
 
     # convert the Start Time column to datetime
@@ -190,14 +184,8 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-<<<<<<< HEAD
 
     # ask the user after each five lines if he/she want more
-||||||| merged common ancestors
-        
-=======
-
->>>>>>> refactoring
         counter = 1
         for i, (index,row) in enumerate(df.iterrows()):
             print('\n', row)
@@ -207,14 +195,8 @@ def main():
                 elif (i == df.shape[0]):
                     break
             counter += 1
-<<<<<<< HEAD
 
-    # ask the user if he/she want to restart 
-||||||| merged common ancestors
-        
-=======
-
->>>>>>> refactoring
+    # ask the user if he/she want to restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
