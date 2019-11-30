@@ -75,7 +75,10 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month!='all':
         df = df[df['month'] == monls[month]]
+
+     # filter by day of week if applicable
     if day !=7:
+        # create new DataFrame
         df = df[df['day_of_week']== day]
     return df
 
