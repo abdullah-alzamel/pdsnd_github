@@ -65,10 +65,14 @@ def load_data(city, month, day):
 
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
+
+    # extract month and day of week and hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week']=df['Start Time'].dt.weekday
     df['hour'] = df['Start Time'].dt.hour
     monls = {'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6}
+
+    # filter by month if applicable
     if month!='all':
         df = df[df['month'] == monls[month]]
     if day !=7:
