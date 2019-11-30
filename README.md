@@ -5,7 +5,7 @@ Include the date you created this project and README file.
 Replace the Project Title
 
 ### Description
-Describe what your project is about and what it does
+The project talk about statistical on the bikes in three cities which is Chicago, New York and Washington
 
 ### Files used
 Include the files used
