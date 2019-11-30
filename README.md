@@ -1,11 +1,10 @@
 ### Date created
-Include the date you created this project and README file.
 30-novamber-2019
 ### Project Title
-Replace the Project Title
+Bikeshare
 
 ### Description
-The project talk about statistical on the bikes in three cities which is Chicago, New York and Washington
+The project talk about statistical on the Bikeshare in three cities which is Chicago, New York and Washington.
 
 ### Files used
 Include the files used
